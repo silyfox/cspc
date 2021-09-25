@@ -15,17 +15,15 @@
 <p><br /></p>
 <h4>1. General architecture of the proposed embedding extraction module. For simplicity here we omit Tacotron2: </h4>
 <center><p><img src="pc.png" alt="arch" /></p> </center>
-<div style="text-align: justify">The architecture of the proposed CSPC model. The input text is represented as the phone sequence, and speech is represented by Mel-spectrogram which can be converted to waveform signal via a vocoder. The input ``Mel" is from reference audio to provide the speaker-independent emotion embedding via the emotion encoder. Two EDMs are just used during the training processing, and only the emotion encoder with ``Mel" as input is kept during the inference.</div>
+<div style="text-align: justify">The proposed cross-speaker emotional speech synthesis model with prosody compensation, referred to as CSPC, is a Tacotron2 based framework with extended speaker and emotion disentangling module (SED) and PCM. The SED is to obtain disentangled speaker and emotion embeddings from the reference spectrum, and the PCM is to obtain extra emotion information from AIF to compensate for the information loss in the emotion embedding caused by the disentangling.</div>
 <p><br /></p>
-<h4>1.1 The architecture of the GC encoder: </h4>
+<h4>1.1 The architecture of the prosody compensation encoder: </h4>
 <center><p><img src="gc_encoder.png" alt="arch" /></p> </center>
-<div style="text-align: justify">The architecture of GC encoder</div>
-<h4>Note: </h4>
-To facilitate fair comparison, we particularly select a sentence without apparent emotion (from text) to synthesize emotional speech with different emotions and strengths because a sentence with apparent emotion may mislead the listeners to have an unfair judgment on the emotion render. <br>
+<div style="text-align: justify">The prosody compensation encoder is similar to the combination of the feature extractor and emotion encoder in SED. The difference is that three GC blocks are introduced in this encoder.</div>
 <h4>2. Comparisons with other methods on the task of emotion transfer TTS:</h4>
 <blockquote>
 <table border=1>
-<div style="text-align: justify"> Corresponding to Section 5.1 of the paper,the following demos are synthesized by different methods with the same text as input, i.e., 让那些小主顾们等一等到吧 (English Translation: Let those little customers wait a while). The task is to synthesized speech with the same emotion as that from emotion reference audio (the first column) and the same voice as that from target speaker reference audio (the second column). It can be found that compared to both  Mspk-GST and Mspk-VAE,  the proposed method can achieve a good balance between maintaining the target speaker's identity and enriching the transferred emotional expression. </div>
+<div style="text-align: justify"> Corresponding to Section 4.1 of the paper,the following demos are synthesized by different methods with the same text as input. The task is to synthesized speech with the same emotion as that from emotion reference audio (the first column) and the same voice as that from target speaker reference audio (the second column). It can be found that compared with Multi-R, CSET, and PB, the proposed CSPC can achieve a good balance between maintaining the target speaker's identity and enriching the transferred emotional expression. </div>
 <tr>
 <td align="center"><span>emotion</span></td>
 <td align="center"><span>Emotion reference audio</span></td>
@@ -95,7 +93,7 @@ To facilitate fair comparison, we particularly select a sentence without apparen
 <h4>3. Ablation stydy: the necessity of emotion embedding and prosody compensation </h4>
 <blockquote>
 <table border=1>
-<div style="text-align: justify"> Corresponding to Section 5.2 of the paper,the following demos present synthetic speech with different emotion strengths (weak, medium, and strong) with the same text as input, i.e., 让那些小主顾们等一等到吧 (English Translation: Let those little customers wait a while). The emotion strength is controlled by a flexible emotion scaler with values of 1, 2, and 3. It can be found that strength differences can be successfully reflected by speech controlled by different scalar values, and the speaker leakage issue is not obvious in speech with strong emotions.</div>
+<div style="text-align: justify"> Corresponding to Section 4.2.1 of the paper,the following demos are synthesized by different methods with the same text as input. The task is to synthesized speech with the same emotion as that from emotion reference audio (the first column) and the same voice as that from target speaker reference audio (the second column). It can be found that the prosodycompensation embedding can provide extra emotion information to the emotion embedding, and the proposed prosody compensation method can effectively improve the emotion transfer performance and mean-while maintain the target speaker’s voice</div>
 <tr>
 <td align="center"><span>emotion</span></td>
 <td align="center"><span>Emotion reference audio</span></td>
@@ -157,7 +155,7 @@ To facilitate fair comparison, we particularly select a sentence without apparen
 <h4>4. Ablation study: the effectiveness of GC block </h4>
 <blockquote>
 <table border=1>
-<div style="text-align: justify"> Corresponding to Section 5.3 of the paper. Input text: 让那些小主顾们等一等到吧 (English Translation: Let those little customers wait a while).</div>
+<div style="text-align: justify"> Corresponding to Section 4.2.2 of the paper. It can be found that in terms of emotional expressiveness, CSPC significantly outperforms the variant w/o GC without significant influence on speaker similarity.</div>
 <tr>
 <td align="center"><span>emotion</span></td>
 <td align="center"><span>Emotion reference audio</span></td>
@@ -210,7 +208,7 @@ To facilitate fair comparison, we particularly select a sentence without apparen
 </table>
 <br/>
 </blockquote>
-<h4>5. Extra samples on controllable emotional speech synthesis </h4>
+<!--<h4>5. Extra samples on controllable emotional speech synthesis </h4>
 <blockquote>
 <table border=1>
 <div style="text-align: justify"> In particular, we choose some sentences with obvious emotions (from the text) to synthesize emotional speeches of different strengths.</div>
@@ -336,5 +334,5 @@ To facilitate fair comparison, we particularly select a sentence without apparen
 <td><audio controls><source src="demo/extra_samples/101027-21_h.wav"></audio></td>
 </tr>
 </table>
-<br/>
-</blockquote>
+<br/> 
+</blockquote>-->
