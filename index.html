@@ -35,10 +35,10 @@
 <h2>0. Contents</h2>
 <ol>
   <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#Comparison with other methods">Demos -- Emotional speech synthesis by transferring the emotion from reference audio</a></li>
+  <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio</a></li>
   <li><a href="#ablation 4.2.1">Demos -- The necessity of emotion embedding and prosody compensation</a></li>
   <li><a href="#ablation 4.2.2">Demos -- The effectiveness of GC block</a></li>
-  <li><a href="db6 demo">Demos -- Samples with DB_6 as the emotional reference</a></li>
+  <li><a href="#db6 demo">Demos -- Samples with DB_6 as the emotional reference</a></li>
 </ol>
 
 <br><br>
@@ -49,12 +49,11 @@
 	<center><img src='gc_encoder.png'></center>
 <br><br>
 
-<h2>The source speaker is from AIC and DB_6 randomly. Among them, the obvious timbre difference between the little girl (the source speaker AIC) and the adult female (the target speaker DB_1) makes it easier for the listener to perceive the timbre. Therefore, we first provide samples of each experiment with AIC as the emotional reference for transferring the emotion to the target speaker DB_1, and samples with DB_6 as the emotional reference will also be provided in the following.</a></h2>
+<h3>The source speaker is from AIC and DB_6 randomly. Among them, the obvious timbre difference between the little girl (the source speaker AIC) and the adult female (the target speaker DB_1) makes it easier for the listener to perceive the timbre. Therefore, we first provide samples of each experiment with AIC as the emotional reference for transferring the emotion to the target speaker DB_1, and samples with DB_6 as the emotional reference will also be provided in the following.</a></h2>
 <br>
 
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
 <h3>Corresponding to section 4.1 in our paper, below lists the samples that are synthesized for evaluations on emotion transfer task. We compared CSPC (proposed) with the Multi-R, CSET, and PB on emotion transfer expressiveness and speaker similarity.</h3>
-<p>Non-parallel emotion transfer:</p>
 <table>
   <thead>
     <tr>
@@ -338,7 +337,7 @@
     <tr>
       <td style="text-align: left"><audio src="demo/ref_db6/241722-sur.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/prodb6ref/220060.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/prodb6ref/220066.wav" controls="" preload=""></audio></td>
     </tr>
       <tr>
       <td style="text-align: left" rowspan=2>Sadness</td>
@@ -374,10 +373,15 @@
     <tr>
       <td style="text-align: left"><audio src="demo/ref_db6/250005-fea.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/prodb6ref/260562.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/prodb6ref/260566.wav" controls="" preload=""></audio></td>
     </tr>
    
   </tbody>
 </table>
 
+      <footer class="site-footer">
+
+        </footer>
+      </section>
 </body></html>
+
