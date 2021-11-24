@@ -43,14 +43,11 @@
 
 <br><br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p>Cross-speaker emotion transfer speech synthesis aims to synthesize emotional speech for a target speaker by transferring the emotion from reference recorded by another (source) speaker, where extracting speaker-independent emotion embedding from reference plays an important role. However, the emotional information of such emotion embedding tends to be weakened in the process to squeeze out the source timbre information. In this paper, a prosody compensation module (PCM) is proposed to compensate emotional information for the disentangled emotion embedding. Specifically, the PCM tries to obtain speaker-independent emotional information \textcolor{red}{from the bottleneck feature of a pre-trained ASR model}. To this end, a prosody compensation encoder with GC blocks is introduced to obtain global emotional information from the ASR model's bottleneck feature. Experiments demonstrate that the proposed PCM can effectively compensate emotional information to the emotion embedding, and meanwhile maintain the timbre of the target speaker. Comparisons with state-of-the-art models show that our proposed method presents obvious superiority on the cross-speaker emotion transfer task.
+<p>Cross-speaker emotion transfer speech synthesis aims to synthesize emotional speech for a target speaker by transferring the emotion from reference recorded by another (source) speaker, in which task extracting speaker-independent emotion embedding from reference plays an important role. However, the emotional information of such emotion embedding tends to be weakened in the process to squeeze out the source speaker's timbre information. In this letter, a prosody compensation module (PCM) is proposed to compensate emotional information for the disentangled emotion embedding. Specifically, the PCM tries to obtain speaker-independent emotional information from the intermediate feature of a pre-trained ASR model. To this end, a prosody compensation encoder with global context (GC) blocks is introduced to obtain global emotional information from the ASR model's intermediate feature. Experiments demonstrate that the proposed PCM can effectively compensate emotional information to the emotion embedding, and meanwhile maintain the timbre of the target speaker. Comparisons with state-of-the-art models show that our proposed method presents obvious superiority on the cross-speaker emotion transfer task.
 </p>
-	<center><img src='pc_bn.png'></center>
+	<center><img src='taslp_gcpc_2.png'></center>
 	<center><img src='gc_encoder.png'></center>
 <br><br>
-
-<h3>Tips: The emotion is transferred to the target speaker DB_1 from the source emotional speaker AIC and DB_6 randomly. Among them, the obvious timbre difference between the little girl (the source speaker AIC) and the target speaker DB_1 makes it easier for the listener to perceive the timbre. Therefore, we first provide samples of each experiment with AIC as the emotional reference for transferring the emotion to the target speaker DB_1, and samples with DB_6 as the emotional reference will also be provided in the following.</a></h2>
-<br>
 
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
 <h3>Corresponding to section 4.1 in our paper, below lists the samples that are synthesized for evaluations on emotion transfer task. We compared CSPC (proposed) with the Multi-R, CSET, and PB on emotion transfer expressiveness and speaker similarity.</h3>
@@ -72,72 +69,72 @@
 	  <td style="text-align: left" colspan=3>Text: 什么？大个居然变成石头啦！(English: What? big guy turned to stone!)</td>
 	</tr>
     <tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/210091.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/210091_sur.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Happy</td>
-	  <td style="text-align: left" colspan=3>Text: 心情如春风，举手投足都带上了一种轻快的节奏。  (English: The mood is like a spring breeze, with a brisk rhythm in every move.)</td>
+	  <td style="text-align: left" colspan=3>Text: 谢谢您，我会争取做得更好，也欢迎你随时来提问。  (English: Thank you. I will try to do better, and you are welcome to ask questions at any time.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/220061.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/220063_hap.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Sadness</td>
-	  <td style="text-align: left" colspan=3>Text: 我的作文被老师当成笑话看待。(English: My composition was treated as a joke by the teacher.)</td>
+	  <td style="text-align: left" colspan=3>Text: 新买的键盘，回车键就坏了。 (English: The new keyboard, the enter key is broken.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/230010.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/230661.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/230661.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/230661.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/230661.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003487.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/230664_sad.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Angry</td>
-	  <td style="text-align: left" colspan=3>Text: 这人如此狂妄。(English: This man is so arrogant.)</td>
+	  <td style="text-align: left" colspan=3>Text: 讨厌的东西。(English: Something I hate.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/240062.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/240067.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/240067.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/240067.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/240067.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/24006_ang7.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/240067_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/240067_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/240067_ang.wav" controls="" preload=""></audio></td>
     </tr>
    <tr>
       <td style="text-align: left" rowspan=2>Ddisgust</td>
 	  <td style="text-align: left" colspan=3>Text: 见到她能绕道走，就尽量绕道走。(English: When you see that she can make a detour, try to make a detour.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/250045.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/250264.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/250264.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/250264.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/250264.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003490.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/250264_dis.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Fear</td>
 	  <td style="text-align: left" colspan=3>Text: 孩子如果你害怕的话就别看吧。(English: Son, if you're scared, don't look.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/260568.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/260565.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/260565.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/260565.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/260565.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/260565_fea.wav" controls="" preload=""></audio></td>
     </tr>
    
   </tbody>
@@ -165,66 +162,66 @@
 	  <td style="text-align: left" colspan=2>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp_l/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/vae1/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/210092.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Happy</td>
 	  <td style="text-align: left" colspan=2>Text: 散散步，呼吸下新鲜空气，整个人都神清气爽了呢。(English: Take a walk and get some fresh air, i feel refreshed and refreshed.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp_l/220062.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/220062.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/220062.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/220062_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/220062_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/220062_hap.wav" controls="" preload=""></audio></td>
     </tr>
       <tr>
       <td style="text-align: left" rowspan=2>Sadness</td>
-	  <td style="text-align: left" colspan=2>Text: 我心爱的花花离家出走了。(English: My beloved Huahua ran away from home.)</td>
+	  <td style="text-align: left" colspan=2>Text: 我的显示器又花屏了。(English: My monitor is blurred again.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/230010.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/230660.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pc_only/230660.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/230660.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/230665_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/230665_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/230665_sad.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Angry</td>
 	  <td style="text-align: left" colspan=2>Text: 快跟我回去！(English: Come back with me!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/240062.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pc_only/240064.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp_l/240064.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/240064.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/240064_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/240064_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/240064_ang.wav" controls="" preload=""></audio></td>
     </tr>
    <tr>
       <td style="text-align: left" rowspan=2>Disgust</td>
 	  <td style="text-align: left" colspan=2>Text: 看见你我就想踹飞你。(English: When I see you, I want to kick you.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/250045.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp_l/250265.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/250265.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/250265.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003487.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/250265_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/250265_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/250265_dis.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Fear</td>
-	  <td style="text-align: left" colspan=2>Text: 哎呀，这一看我的心更慌了。(English: Alas, my heart is even more panicked when I look at it.)</td>
+	  <td style="text-align: left" colspan=2>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not breathe.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/260568.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp_l/260564.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/bnref/260564.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/260564.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pconly/260564_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/eeonly/260563_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/260563_fea.wav" controls="" preload=""></audio></td>
     </tr>
    
   </tbody>
@@ -252,63 +249,63 @@
   <tbody>
     <tr>
       <td style="text-align: left" rowspan=2>Surprise</td>
-	  <td style="text-align: left" colspan=2>Text: 哇！原来小牛犊是一头神牛！(English: Wow! It turns out that the calf is a sacred cow!)</td>
+	  <td style="text-align: left" colspan=2>Text: 啊!真残忍！(English: Aah! How cruel!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/210094.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/210094.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/210096_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/210096_sur.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Happy</td>
 	  <td style="text-align: left" colspan=2>Text: 姐姐说话温柔细声细气的，给人的感觉态度很好哦。(English: The elder sister speaks softly and softly, which gives people the impression that the attitude is very good.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/220061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pc_only/220067.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/220067.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/220067_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/220067_hap.wav" controls="" preload=""></audio></td>
     </tr>
       <tr>
       <td style="text-align: left" rowspan=2>Sadness</td>
 	  <td style="text-align: left" colspan=2>Text: 我的显示器又花屏了。(English: My monitor is blurred again.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/230010.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/230665.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/230665.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/230665_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/230665_sad.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Angry</td>
 	  <td style="text-align: left" colspan=2>Text: 还有什么事！(English: Is there anything else!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/240062.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/240061.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/240061.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/240061_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/240061_ang.wav" controls="" preload=""></audio></td>
     </tr>
    <tr>
       <td style="text-align: left" rowspan=2>Disgust</td>
 	  <td style="text-align: left" colspan=2>Text: 我受不了了，赶紧滚！(English: I can't take it anymore. Get out of here!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/250045.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210092.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/mel_only/250267.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/250267.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/250267_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/250267_dis.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>Fear</td>
 	  <td style="text-align: left" colspan=2>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/260568.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/210091.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/bnref/260563.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/260563.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/refpc/260563_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/260563_fea.wav" controls="" preload=""></audio></td>
     </tr>
    
   </tbody>
