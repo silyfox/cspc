@@ -317,39 +317,96 @@
 
 <br><br>
 <h2> 5. Additional demos -- Transfer emotion to the new target speaker who only has 200 sentences through simple fine-tuning. <a name="db6 demo"></a></h2>
-<h3> Below lists the samples that using DB_6 as the source of emotion to transfer emotion to the new target speaker.</h3>
+<h3> Below lists the samples that use DB_6 as the source of emotion to transfer emotion to the four new target speakers.</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>Target speaker reference</strong></th>
-      <th style="text-align: center"><strong>Emotion reference</strong></th>
-      <th style="text-align: center"><strong>Target speaker reference</strong></th>
-      <th style="text-align: center"><strong> w/o EE </strong></th>
-      <th style="text-align: center"><strong> w/o PCE </strong></th>
-      <th style="text-align: center"><strong> CSPC (Proposed) </strong></th>
+      <th style="text-align: center" rowspan=2><strong>Target speaker reference</strong></th>
+      <th style="text-align: center"><strong>Surprise</strong></th>
+      <th style="text-align: center"><strong>Happy</strong></th>
+      <th style="text-align: center"><strong>Sad</strong></th>
+      <th style="text-align: center"><strong>Angry</strong></th>
+      <th style="text-align: center"><strong>Disgust</strong></th>
+      <th style="text-align: center"><strong>Fear</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
+      <td style="text-align: left" rowspan=1> </td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/f1.wav" controls="" preload=""></audio></td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
     </tr>
-   
+      <td style="text-align: left">Transfer sample<audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+	</tr>
+	<tr>
+	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/f2.wav" controls="" preload=""></audio></td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+    </tr>
+      <td style="text-align: left">Transfer sample<audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+	</tr>
+	<tr>
+	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/f3.wav" controls="" preload=""></audio></td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+    </tr>
+      <td style="text-align: left">Transfer sample<audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+	</tr>
+	<tr>
+	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/db4.wav" controls="" preload=""></audio></td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+	  <td style="text-align: left" colspan=1>Text: 我害怕极了，连大气都不敢出。(English: I was so scared that I dared not come out of the atmosphere.)</td>
+    </tr>
+      <td style="text-align: left">Transfer sample<audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left">Transfer sample<audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td>
+	</tr>
   </tbody>
 </table>
       <footer class="site-footer">
-
         </footer>
       </section>
 </body></html>
