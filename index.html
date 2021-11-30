@@ -319,129 +319,63 @@
 <h2> 5. Additional demos -- Transfer emotion to the new target speaker who only has 200 sentences through simple fine-tuning. <a name="db6 demo"></a></h2>
 <h3> Below lists the samples that using DB_6 as the source of emotion to transfer emotion to the new target speaker.</h3>
 <table border=1>
-<div style="text-align: justify"> In particular, we choose some sentences with obvious emotions (from the text) to synthesize emotional speeches of different strengths.</div>
+<div style="text-align: justify"> Corresponding to Section 5.1 of the paper,the following demos are synthesized by different methods with the same text as input, i.e., 让那些小主顾们等一等到吧 (English Translation: Let those little customers wait a while). The task is to synthesized speech with the same emotion as that from emotion reference audio (the first column) and the same voice as that from target speaker reference audio (the second column). It can be found that compared to both  Mspk-GST and Mspk-VAE,  the proposed method can achieve a good balance between maintaining the target speaker's identity and enriching the transferred emotional expression. </div>
 <tr>
-<br/>
-【Fear】我，我再也不敢动了。(English Translation: I-I don't dare to move anymore.)<br>
-<br/>
 <td align="center"><span>emotion</span></td>
 <td align="center"><span>Emotion reference audio</span></td>
 <td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
+<td align="center"><span>Mspk-GST</sub><span></td>
+<td align="center"><span>Mspk-VAE</sub><span></td>
+<td align="center"><span>Proposed</sub><span></td>
 </tr>
 <tr>
 <td>fear</td>
 <td><audio controls><source src="demo/ref_emo/101020-26.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-26.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_260151-260151_fea-NC.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_260151-260151_fea-M+.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_260151-260151_fea-H1.wav"></audio></td>
+<td><audio controls><source src="demo/gst/101020-26.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-26.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-26.wav"></audio></td>
 </tr>
-</table>
-<br/>
 <tr> 
-<table border=1>
-<br/>
-【Disgust】 但要理解一个遥远的国家对他来说还太困难。(English Translation: But it is too difficult for him to understand a faraway country.)<br>
-<br/>
-<td align="center"><span>emotion</span></td>
-<td align="center"><span>Emotion reference audio</span></td>
-<td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
-</tr>
-<tr>
 <td>disgust</td>
 <td><audio controls><source src="demo/ref_emo/101020-25.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-25.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/020000-250592_dis-NC.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/020000-250592_dis-M+.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/020000-250592_dis-H2.wav"></audio></td>
-</tr>
-</table>
-<br/>
-<table border=1>
-【Angry】阿三是个工人的妻子，她丈夫失了业.(English Translation: A San is the wife of a worker, and her husband lost his job.)<br>
-<br/>
-<td align="center"><span>emotion</span></td>
-<td align="center"><span>Emotion reference audio</span></td>
-<td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
+<td><audio controls><source src="demo/gst/101020-25.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-25.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-25.wav"></audio></td>
 </tr>
 <tr>
 <td>angry</td>
 <td><audio controls><source src="demo/ref_emo/101020-24.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-24.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101022-240056_ang-M.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101022-240056_ang-H.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101022-240056_ang-H2.wav"></audio></td>
-</tr>
-</table>
-<br/>
-<table border=1>
-【Sad】不管怎样都要注意身体，否则我的心会难受的.(English Translation: Pay attention to your body no matter what, or my heart will feel bad.)<br>
-<br/>
-<td align="center"><span>emotion</span></td>
-<td align="center"><span>Emotion reference audio</span></td>
-<td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
+<td><audio controls><source src="demo/gst/101020-24.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-24.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-24.wav"></audio></td>
 </tr>
 <tr>
 <td>sad</td>
 <td><audio controls><source src="demo/ref_emo/101020-23.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-23.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_230356-230440_sad-L.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_230356-230440_sad-M.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_230356-230440_sad-M+.wav"></audio></td>
-</tr>
-</table>
-<br/>
-<table border=1>
-【Happy】你说的没错，自信是成功的一半，所以要先树立起你的自信哦，嘻嘻.(English Translation: You are right, self-confidence is half of success, so first build up your self-confidence, hee hee)<br>
-<br/>
-<td align="center"><span>emotion</span></td>
-<td align="center"><span>Emotion reference audio</span></td>
-<td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
+<td><audio controls><source src="demo/gst/101020-23.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-23.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-23.wav"></audio></td>
 </tr>
 <tr>
 <td>happy</td>
 <td><audio controls><source src="demo/ref_emo/101020-22.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-22.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_220158-220158_hap-L.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_220158-220158_hap-M.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/adult_220158-220158_hap-H.wav"></audio></td>
-</tr>
-</table>
-<br/>
-<table border=1>
-【Surprise】鲁宾孙乘这艘船在海上航行半年后！.(English Translation: After six months of sailing on this ship, Robinson)<br>
-<br/>
-<td align="center"><span>emotion</span></td>
-<td align="center"><span>Emotion reference audio</span></td>
-<td align="center"><span>Target speaker reference audio</span></td>
-<td align="center"><span>Weak</span></td>
-<td align="center"><span>Medium</sub><span></td>
-<td align="center"><span>Strong</sub><span></td>
+<td><audio controls><source src="demo/gst/101020-22.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-22.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-22.wav"></audio></td>
 </tr>
 <tr>
 <td>surprise</td>
 <td><audio controls><source src="demo/ref_emo/101020-21.wav"></audio></td>
 <td><audio controls><source src="demo/ref_spk/101020-21.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101027-21_l.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101027-21_m.wav"></audio></td>
-<td><audio controls><source src="demo/extra_samples/101027-21_h.wav"></audio></td>
+<td><audio controls><source src="demo/gst/101020-21.wav"></audio></td>
+<td><audio controls><source src="demo/vae/101020-21.wav"></audio></td>
+<td><audio controls><source src="demo/proposed/101020-21.wav"></audio></td>
 </tr>
-</table>
       <footer class="site-footer">
 
         </footer>
