@@ -28,7 +28,7 @@
 <section class="main-content">
       <h1 id=""><center>CROSS-SPEAKER EMOTION TRANSFER BASED ON PROSODY COMPENSATION FOR END-TO-END SPEECH SYNTHESIS</center></h1>
 
-<center> Tao Li, Xinsheng Wang, Qicong Xie, Zhichao Wang, Mingqi Jiang, Lei Xie;  </center>
+<center> Tao Li, Xinsheng Wang, Qicong Xie, Zhichao Wang, Mingqi Jiang, Yunlin Chen, Lei Xie;  </center>
 <center> Northwestern Polytechnical University </center>
 <center> Xi’an Jiaotong University </center> 
 <center>  Mobvoi AI Lab </center>
@@ -39,7 +39,7 @@
   <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio</a></li>
   <li><a href="#ablation 4.2.1">Demos -- The necessity of emotion embedding and prosody compensation</a></li>
   <li><a href="#ablation 4.2.2">Demos -- The effectiveness of GC block</a></li>
-  <li><a href="#db6 demo">Additional demos -- Transfer emotion to the new target speaker who only has 200 sentences through simple fine-tuning</a></li>
+  <li><a href="#db6 demo">Additional demos -- Transfer emotion to a new target speaker who only has 200 sentences through simple fine-tuning</a></li>
 </ol>
 
 <br><br>
@@ -54,7 +54,7 @@
 <br><br>
 
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
-<h3>Corresponding to section 4.1 in our paper, below lists the samples that are synthesized for evaluations on emotion transfer task. We compared CSPC (proposed) with the Multi-R, CSET, and PB on emotion transfer expressiveness and speaker similarity.</h3>
+<h3>Corresponding to section 4.1 in the paper, several samples synthesized by the proposed CSPC and other compared methods on the emotion transfer task are listed below.</h3>
 <table>
   <thead>
     <tr>
@@ -143,11 +143,11 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that compared with Multi-R, CSET, and PB, the proposed CSPC can achieve a good balance between maintaining the target speaker's identity and enriching the transferred emotional expression.</a></h2>
+<h3>Short summary: It can be found that compared with Multi-R, CSET, and PB, the proposed CSPC can achieve a good balance between maintaining the target speaker's timbre and enriching the transferred emotional expression.</a></h2>
 
 <br><br>
 <h2>3. Demos -- The necessity of emotion embedding and prosody compensation<a name="ablation 4.2.1"></a></h2>
-<h3>Corresponding to section 4.2.1 in our paper,  below lists the samples that are synthesized for presenting the effectiveness of our proposed prosody compensation method.</h3>
+<h3>Corresponding to section 4.2.1 in the paper, samples synthesized by CSPC and also CSPC' variants that without emotion embedding (w/o EE) or prosody compensation embedding (w/o PCE) on the emotion transfer task are listed below.</h3>
 
 <table>
   <thead>
@@ -235,10 +235,10 @@
 <br><br>
 <h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
 	<center><img src='emotion_ab.png'></center>
-<h4>As we can see that in terms of the emotion similarity, CSPC significantly outperforms the w/o GC without the GC block.</h3>
+<h4>As we can see that in terms of the emotion similarity, CSPC obviously outperforms the w/o GC without the GC block.</h3>
 	<center><img src='speaker_ab.png'></center>
-<h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not significant.</h3>
-<h3>Corresponding to section 4.2.2 in our paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
+<h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not obvious.</h3>
+<h3>Corresponding to section 4.2.2 in the paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
 
 <table>
   <thead>
@@ -317,8 +317,8 @@
 <h3>Short summary: It can be found that in terms of emotional expressiveness, CSPC significantly outperforms the variant w/o GC without significant influence on speaker similarity.</a></h2>
 
 <br><br>
-<h2> 5. Additional demos -- Transfer emotion to the new target speaker who only has 200 sentences through simple fine-tuning <a name="db6 demo"></a></h2>
-<h3> Below lists the samples that use DB_6 as the source of emotion to transfer emotion to the new target speakers.</h3>
+<h2> 5. Additional demos -- Transfer emotion to a new target speaker who only has 200 sentences through simple fine-tuning <a name="db6 demo"></a></h2>
+<h3> Following samples are synthesized by transferring the emotion to a target speaker who has only 200 utterances.</h3>
 <table>
   <thead>
     <tr>
